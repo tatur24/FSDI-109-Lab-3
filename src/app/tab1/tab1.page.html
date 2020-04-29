@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      News Feed
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div>
+  <ion-card *ngFor="let message of displayMessage">
+    <ion-card-content *ngIf="message.imageUrl">
+      <ion-img src="{{message.imageUrl}}"></ion-img>
+      
+    </ion-card-content>
+
+   <ion-card-header>
+   <ion-card-subtitle>{{message.text}}</ion-card-subtitle>
+   <ion-card-title>{{message.from}} to {{message.to}}
+  </ion-card-title>   
+   <span class="position">{{message.createdOn | date:'MM/dd/yyyy hh:mm'}}</span> 
+  </ion-card-header>
+  </ion-card>
+  </div>
+
+  
+
+
+</ion-content>
